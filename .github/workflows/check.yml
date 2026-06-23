@@ -1,0 +1,35 @@
+name: Check Boulder Listings
+
+on:
+  schedule:
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run the listing checker
+        run: python check_listings.py
+
+      - name: Commit updated results
+        run: |
+          git config user.name "housing-bot"
+          git config user.email "housing-bot@users.noreply.github.com"
+          git add docs/index.html seen_listings.json
+          git commit -m "Update listings" || echo "No changes to commit"
+          git push
