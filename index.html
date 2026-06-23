@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boulder Housing Watch</title>
+<style>
+  :root {
+    --bg: #faf8f4; --ink: #1f2a24; --muted: #6b7770;
+    --accent: #2f5d50; --new: #b4541f; --line: #e3ddd2;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 2rem 1rem 4rem; background: var(--bg); color: var(--ink);
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin: 0 0 .25rem; letter-spacing: -.01em; }
+  .sub { color: var(--muted); margin: 0 0 1.5rem; font-size: .92rem; }
+  .summary { background: #fff; border: 1px solid var(--line); border-radius: 12px;
+    padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+  .summary strong { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; background: #fff;
+    border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--line); }
+  th { background: #f1ede4; font-size: .78rem; text-transform: uppercase;
+    letter-spacing: .04em; color: var(--muted); }
+  tr:last-child td { border-bottom: none; }
+  .rent { font-weight: 700; white-space: nowrap; color: var(--accent); }
+  .beds { white-space: nowrap; color: var(--muted); font-size: .9rem; }
+  .newrow { background: #fff8f2; }
+  .badge { display: inline-block; font-size: .68rem; font-weight: 700;
+    padding: .1rem .45rem; border-radius: 999px; margin-left: .35rem;
+    vertical-align: middle; text-transform: uppercase; letter-spacing: .03em; }
+  .badge.new { background: var(--new); color: #fff; }
+  .badge.ideal { background: #e7f0ec; color: var(--accent); }
+  .empty { text-align: center; color: var(--muted); padding: 2rem 1rem; }
+  a { color: var(--accent); }
+  .status { margin-top: 1.5rem; font-size: .8rem; color: var(--muted); }
+  .site { display: inline-block; margin-right: .75rem; }
+  .site.ok::before { content: "\25CF "; color: #3a8a5f; }
+  .site.blocked::before { content: "\25CF "; color: #c0392b; }
+  .foot { margin-top: 2rem; font-size: .78rem; color: var(--muted); line-height: 1.6; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Boulder Housing Watch</h1>
+    <p class="sub">Studios &amp; 1BRs under $1,750 &middot; within ~5 mi of the East Boulder office &middot; auto-checked daily</p>
+
+    <div class="summary">
+      <strong>0</strong> listing(s) in budget this run
+      &middot; <strong>0</strong> new since last check
+      <br><span style="font-size:.85rem;color:var(--muted)">Last updated Tuesday, June 23 2026 at 10:37 PM UTC</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Rent</th><th>Beds</th><th>Listing</th><th>Source</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="5" class="empty">No listings under $1,750 found this run. Check back in a couple days.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="status"><span class="site blocked">Apartment List: blocked / no results</span> <span class="site blocked">Zillow: blocked / no results</span> <span class="site blocked">Apartments.com: blocked / no results</span></div>
+
+    <p class="foot">
+      Criteria: studio or 1BR, max $1,750/mo, anywhere in Boulder within roughly
+      5 miles of 2000 Central Ave (ZIPs 80301&ndash;80305 and 80503). Listings marked
+      &#9733; are at or under your $1,500 ideal. This page is a personal
+      convenience tool &mdash; always confirm details (in-unit W/D, parking, outdoor
+      space) directly with the listing. Some sites block automated checks; when that
+      happens they show as blocked above and you should check them manually. Facebook
+      Marketplace and Craigslist are not covered here &mdash; use their own saved-search alerts.
+    </p>
+  </div>
+</body>
+</html>
